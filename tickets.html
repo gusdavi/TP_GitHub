@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ballet&display=swap" rel="stylesheet">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <title>ConfTickets</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img id="logo" src="images/codoacodo.png" alt="" class="d-inline-block align-text-center">
+                    Conf Bs As
+                  </a>
+                <a class="nav-link" href="index.html">La conferencia</a>
+                <a class="nav-link" href="index.html#oradores">Los oradores</a>
+                <a class="nav-link" href="index.html#lugar">El lugar y la fecha</a>
+                <a class="nav-link" href="index.html#quieroSerOrador">Conviértete en orador</a>
+                <a class="nav-link" href="tickets.html">Comprar tickets</a>
+            </div>              
+        </nav>
+    </header>
+    <section>          
+        <div class="container-sm">
+        <div class="row">
+            <div class="caja" id="estudiante">
+                <h5>Estudiante</h5> <br>
+                <b> Tienen un descuento </b><br>
+                <b>- 80% OFF -</b>  <br> <br>
+                *presentar documentación
+                </div>
+            <div class="caja" id="trainee">
+                <h5>Trainee</h5> <br>
+                <b>Tienen un descuento </b> <br>
+                <b>- 50% OFF -</b> <br> <br>
+                *presentar documentación
+                </div>
+            <div class="caja" id="junior">
+                <h5>Junior</h5> <br>
+                <b> Tienen un descuento </b><br>
+                <b>- 15% OFF -</b> <br> <br>
+                *presentar documentación
+                </div>
+                      
+        </div>
+          
+        <div class="container-sm">
+        <div class="row g-3">
+            <form class="col-md-5"></form>
+            <h3 class="text-center">- VENTA -<br> VALOR GENERAL DE TICKET: $200,-</h3>
+                <div class="col-md-5">
+                  <input type="text" class="form-control" placeholder="Nombre">
+                </div>
+                <div class="col-md-5">
+                  <input type="text" class="form-control" placeholder="Apellido">
+                </div>
+                <div class="col-5">
+                    <label for="num1">Cantidad</label>
+                    <select class="form-control" type="number" id="num1" name="categoria">
+                        <option value=1>1</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5</option>
+                        <option value=6>6</option>
+                        <option value=7>7</option>
+                        <option value=8>8</option>
+                        <option value=9>9</option>
+                        <option value=10>10</option>
+                    </select>
+                    </div>
+                    <div class="col-5">
+                    <label for="num2">Categoria</label>
+                    <select class="form-control" type="number" id="num2" name="categoria">
+                        <option value=1>General - Sin descuento</option>
+                        <option value=0.2>Estudiante - 80% OFF</option>
+                        <option value=0.5>Trainee - 50% OFF</option>
+                        <option value=0.85>Junior - 15% OFF</option>
+                    </select>
+                    </div>
+
+                    <div class="col-10 alert alert-info" id="sumando">
+                        <strong>Total a pagar: $--,-</strong>
+                    </div>
+
+                    <div class="sm col-10 btn-group btn-group-justified">
+                        <button type="button" id="botonespago" class="btn btn-success" onclick="borrar()">Borrar</button>
+                        <button type="button" id="botonespago" class="btn btn-success" onclick="myFunction()">Resumen</button>
+                    </div>
+                    
+                
+                </div>
+
+                <script>  
+                    function myFunction() {  
+                      var x,y,suma,text;  
+                      x = document.getElementById("num1").value;  
+                      y = document.getElementById("num2").value;  
+                      if (isNaN(x) || isNaN(y)) {  
+                        text = "Es necesarios introducir dos números válidos";  
+                      } else {  
+                        //si no ponemos parseFloat concatenaría x con y  
+                        total=parseFloat(200)*parseFloat(x)*parseFloat(y);  
+                      }  
+                      document.getElementById("sumando").innerHTML =  "Total a pagar: $" + total +",--";
+                      document.getElementById("sumando").style.fontWeight= "bold";
+                    }  
+
+                    function borrar() {  
+                      document.getElementById("sumando").innerHTML =  "Total a pagar: $--,--";  
+                    }  
+                    </script> 
+
+              </form>  
+        </div>
+        
+        
+     
+    </section>
+
+   
+    <footer>
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="nav-link" href="#">Preguntas <br> frecuentes</a>
+                <a class="nav-link" href="#">Contáctenos</a>
+                <a class="nav-link" href="#">Prensa</a>
+                <a class="nav-link" href="#">Conferencias</a>
+                <a class="nav-link" href="#">Términos y <br>condiciones</a>
+                <a class="nav-link" href="#">Estudiantes</a>
+            </div>              
+        </nav>
+
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</body>
+</html>
